@@ -1,4 +1,4 @@
-FROM docker:24.0
+FROM docker:25
 
 RUN apk add --no-cache \
     aws-cli \
@@ -10,6 +10,6 @@ WORKDIR /
 COPY src/* /bin/
 
 RUN chmod +x /bin/_utils.sh && \
-  chmod +x /bin/deploy
+  chmod +x /bin/push
 
-CMD ["/bin/deploy"]
+CMD ["/bin/push"]
